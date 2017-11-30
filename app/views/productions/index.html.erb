@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productions</h1>
+
+ <%= form_tag [:filter, :productions], :method => 'get', :id => "prod_filter" do %>
+  <p>
+    <%= text_field_tag :filter, params[:filter] %>
+    <%= submit_tag "Filter", :status => nil %>
+  </p>
+<% end %>
+
+  <div id="fast_filter"><%= render 'fast_filter' %></div>
+<br>
+
+<%= link_to 'New Production', new_production_path %>
